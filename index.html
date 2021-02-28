@@ -26,6 +26,12 @@
             margin: auto;
             border-radius: 10px;
             padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        figure {
+            margin: 0;
+            padding-bottom: 7px;
+            padding-right: 7px;
         }
         img {
             width: 150px; 
@@ -40,9 +46,6 @@
         a {
             color:#454545;
         }
-        .img-pad{
-            margin-top: 15px;
-        }
     </style>
 </head>
 
@@ -51,7 +54,9 @@
         <h1>Curriculum vitae</h1>
     </header>
     <main>
-        <img src="https://avatars.yandex.net/get-music-user-playlist/27701/265236767.1000.16809/m1000x1000?1498108273588&webp=false" alt="Аватарка ">
+        <figure>
+            <img src="https://avatars.yandex.net/get-music-user-playlist/27701/265236767.1000.16809/m1000x1000?1498108273588&webp=false" alt="Аватарка">
+        </figure>
         <ol>
             <li>Irina Nekhaychik</li>
             <li>email: <em>irina.nekhaychik.i@gmail.com</em>; phone number: <em>+375 29 830-33-12</em></li>
@@ -59,8 +64,11 @@
             <li>My technical skills are good knowledge of Linux/Unix and in-depth understanding of MS Office; good knowledge in programming (C/C++; C#) and operating systems</li>
             <li>Experience: not yet</li>
             <li>Education: 2019-2023 <a href="https://www.bsuir.by/">Belarussian State University of Informatics and Radioelectronics</a>, Engineering-Psychological Maintenance of Information Technologies</li>
-            <li class="img-pad">English level: B1</li>
-            <li>Code Example:<pre><code>for (int i = 0; i &lt; size - 1; i++) {
+            <li>English level: B1</li>
+            <li>Code Example:</li>
+<details>            
+<summary>Сортировка пузырьком</summary>
+<pre><code>for (int i = 0; i &lt; size - 1; i++) {
     for (int j = 0; j &lt; size - i - 1; j++) {
         if (arr[j] > arr[j + 1]) {
             temp = arr[j];
@@ -68,8 +76,44 @@
             arr[j + 1] = temp;
         }
     }
-}</code>
-            </pre></li>
+}</code></pre>
+</details>
+<details>
+<summary>Метод удаления элемента из списка</summary>
+    <pre><code>Accounts List<Accounts>::dellPoint(Line<Accounts>* obj) {
+        Line<Accounts>* temp, * tempn, data;
+        count--;
+        if (obj == begin && obj != end) {
+            tempn = obj->next;
+            tempn->prev = NULL;
+            begin = tempn;
+            data.obj = obj->obj;
+            delete obj;
+        }
+        else if (obj == end && obj != begin) {
+            temp = obj->prev;
+            temp->next = NULL;
+            end = temp;
+            data.obj = obj->obj;
+            delete obj;
+        }
+        else if (obj == end && obj == begin) {
+            temp = obj;
+            data.obj = obj->obj;
+            delete end;
+            end = begin = NULL;
+        }
+        else {
+            temp = obj->prev;
+            tempn = obj->next;
+            temp->next = tempn;
+            tempn->prev = temp;
+            data.obj = obj->obj;
+            delete obj;
+        }
+        return data.obj;
+    }</code></pre>
+</details>
         </ol>
     </main>
 </body>

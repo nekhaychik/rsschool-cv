@@ -46,6 +46,14 @@
         a {
             color:#454545;
         }
+        .margin-for-ul {
+            margin-top: 5px;
+            margin-left: 160px;
+            
+        }
+        .margin{
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -59,16 +67,24 @@
         </figure>
         <ol>
             <li>Irina Nekhaychik</li>
-            <li>email: <em>irina.nekhaychik.i@gmail.com</em>; phone number: <em>+375 29 830-33-12</em></li>
+            <li>Contacts for communication:<br><ul>
+                <li class="margin-for-ul">email: <em>irina.nekhaychik.i@gmail.com</em></li>
+                <li class="margin-for-ul">phone number: <em>+375 29 830-33-12</em></li>
+            </ul></li>
             <li>I am a student of BSUIR. My goal is to obtain a challenging position to utilize skills in programming and continue to develop my skills for the benefits of the company</li>
-            <li>My technical skills are good knowledge of Linux/Unix and in-depth understanding of MS Office; good knowledge in programming (C/C++; C#) and operating systems</li>
+            <li>Technical skills:<br><ul>
+                <li class="margin">good knowledge of Linux/Unix</li>
+                <li>good knowledge in operating systems</li>
+                <li>C/C++</li>
+                <li>JavaScript</li>
+                <li>C#; .NET Programming</li>
+            </ul>
             <li>Experience: not yet</li>
             <li>Education: 2019-2023 <a href="https://www.bsuir.by/">Belarussian State University of Informatics and Radioelectronics</a>, Engineering-Psychological Maintenance of Information Technologies</li>
             <li>English level: B1</li>
             <li>Code Example:
-<details>            
-<summary>Сортировка пузырьком</summary>
-<pre><code>for (int i = 0; i &lt; size - 1; i++) {
+<details><summary>Сортировка пузырьком</summary>
+<code><pre>for (int i = 0; i &lt; size - 1; i++) {
     for (int j = 0; j &lt; size - i - 1; j++) {
         if (arr[j] > arr[j + 1]) {
             temp = arr[j];
@@ -76,7 +92,7 @@
             arr[j + 1] = temp;
         }
     }
-}</code></pre>
+}</pre></code>
 </details>
 <details>
 <summary>Метод удаления элемента из списка</summary>

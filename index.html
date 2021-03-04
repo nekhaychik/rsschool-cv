@@ -19,13 +19,19 @@
             margin: 15px;
             background-color: #D0D3D4;
         }
-        article {
+        main {
             font-family: Arial, Helvetica, sans-serif;
             color: #454545;
             background-color: #E5E7E9;
             margin: auto;
             border-radius: 10px;
             padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        figure {
+            margin: 0;
+            padding-bottom: 7px;
+            padding-right: 7px;
         }
         img {
             width: 150px; 
@@ -40,8 +46,42 @@
         a {
             color:#454545;
         }
-        .img-pad{
-            margin-top: 15px;
+        .margin-for-ul {
+            margin-top: 5px;
+            margin-left: 160px;
+            
+        }
+        .margin{
+            margin-top: 5px;
+        }
+        footer {
+        position: relative;
+        bottom:0;
+        left:0;
+        width:100%;
+        height: 90px;
+        background-color: #b3b9bb;
+        }
+   
+
+        .icon-style {
+        height:25px;
+        width:25px;
+        padding:5px;
+        padding-left:12px;
+        margin-top:10px;
+        }
+        .logo-rs {
+        height:60px;
+        width:140px;
+        padding:2px;
+        padding-left:0;
+        margin-top:10px;
+        }
+        .h5-footer {
+            float:right;
+            margin-right:20px;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
@@ -51,26 +91,82 @@
         <h1>Curriculum vitae</h1>
     </header>
     <main>
-        <img src="https://avatars.yandex.net/get-music-user-playlist/27701/265236767.1000.16809/m1000x1000?1498108273588&webp=false" alt="Аватарка ">
+        <figure>
+            <img src="https://avatars.yandex.net/get-music-user-playlist/27701/265236767.1000.16809/m1000x1000?1498108273588&webp=false" alt="Аватарка">
+        </figure>
         <ol>
             <li>Irina Nekhaychik</li>
-            <li>email: <em>irina.nekhaychik.i@gmail.com</em>; phone number: <em>+375 29 830-33-12</em></li>
+            <li>Contacts for communication:<br><ul>
+                <li class="margin-for-ul">email: <em>irina.nekhaychik.i@gmail.com</em></li>
+                <li class="margin-for-ul">phone number: <em>+375 29 830-33-12</em></li>
+            </ul></li>
             <li>I am a student of BSUIR. My goal is to obtain a challenging position to utilize skills in programming and continue to develop my skills for the benefits of the company</li>
-            <li>My technical skills are good knowledge of Linux/Unix and in-depth understanding of MS Office; good knowledge in programming (C/C++; C#) and operating systems</li>
-            <li>Experience: not yet</li>
             <li>Education: 2019-2023 <a href="https://www.bsuir.by/">Belarussian State University of Informatics and Radioelectronics</a>, Engineering-Psychological Maintenance of Information Technologies</li>
-            <li class="img-pad">English level: B1</li>
-            <li>Code Example:<pre><code>for (int i = 0; i <&ltsize - 1; i++) {
-    for (int j = 0; j <&ltsize - i - 1; j++) {
+            <li>Technical skills:<br><ul>
+                <li class="margin">good knowledge of Linux/Unix</li>
+                <li>good knowledge in operating systems</li>
+                <li>C/C++</li>
+                <li>JavaScript</li>
+                <li>C#; .NET Programming</li>
+            </ul>
+            <li>Experience: not yet</li>
+            <li>English level: B1</li>
+            <li>Code Example:
+<details><summary>Сортировка пузырьком</summary>
+<pre>for (int i = 0; i &lt; size - 1; i++) {
+    for (int j = 0; j &lt; size - i - 1; j++) {
         if (arr[j] > arr[j + 1]) {
             temp = arr[j];
             arr[j] = arr[j + 1];
             arr[j + 1] = temp;
         }
     }
-}</code>
-            </pre></li>
+}</pre>
+</details>
+<details>
+<summary>Метод удаления элемента из списка</summary>
+    <pre>Accounts List&lt;Accounts&gt;::dellPoint(Line&lt;Accounts&gt;* obj) {
+    Line&lt;Accounts&gt;* temp, * tempn, data;
+    count--;
+    if (obj == begin && obj != end) {
+        tempn = obj->next;
+        tempn->prev = NULL;
+        begin = tempn;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    else if (obj == end && obj != begin) {
+        temp = obj->prev;
+        temp->next = NULL;
+        end = temp;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    else if (obj == end && obj == begin) {
+        temp = obj;
+        data.obj = obj->obj;
+        delete end;
+        end = begin = NULL;
+    }
+    else {
+        temp = obj->prev;
+        tempn = obj->next;
+        temp->next = tempn;
+        tempn->prev = temp;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    return data.obj;
+}</pre>
+</details>
+</li>
         </ol>
     </main>
+ 
+<footer>
+    <a href="https://rs.school/js/"><img src="https://rs.school/images/rs_school_js.svg" alt="RS School" class="logo-rs"></a> 
+    <a href="https://github.com/nekhaychik"><img src="https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1614892835~hmac=b7d446d1494c9c132e072af7af3e0492" class="icon-style" alt="Github"></a>
+    <br><h5 class="h5-footer">CV Task, 2021</h5>
+</footer>
 </body>
 </html>

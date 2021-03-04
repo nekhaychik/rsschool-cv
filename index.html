@@ -82,6 +82,11 @@
         font-family: Arial, Helvetica, sans-serif;
         color: #000000;
         }
+        .h5-footer {
+            float:right;
+            margin-right:20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 
@@ -125,38 +130,38 @@
 <details>
 <summary>Метод удаления элемента из списка</summary>
     <pre>Accounts List&lt;Accounts&gt;::dellPoint(Line&lt;Accounts&gt;* obj) {
-        Line&lt;Accounts&gt;* temp, * tempn, data;
-        count--;
-        if (obj == begin && obj != end) {
-            tempn = obj->next;
-            tempn->prev = NULL;
-            begin = tempn;
-            data.obj = obj->obj;
-            delete obj;
-        }
-        else if (obj == end && obj != begin) {
-            temp = obj->prev;
-            temp->next = NULL;
-            end = temp;
-            data.obj = obj->obj;
-            delete obj;
-        }
-        else if (obj == end && obj == begin) {
-            temp = obj;
-            data.obj = obj->obj;
-            delete end;
-            end = begin = NULL;
-        }
-        else {
-            temp = obj->prev;
-            tempn = obj->next;
-            temp->next = tempn;
-            tempn->prev = temp;
-            data.obj = obj->obj;
-            delete obj;
-        }
-        return data.obj;
-    }</pre>
+    Line&lt;Accounts&gt;* temp, * tempn, data;
+    count--;
+    if (obj == begin && obj != end) {
+        tempn = obj->next;
+        tempn->prev = NULL;
+        begin = tempn;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    else if (obj == end && obj != begin) {
+        temp = obj->prev;
+        temp->next = NULL;
+        end = temp;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    else if (obj == end && obj == begin) {
+        temp = obj;
+        data.obj = obj->obj;
+        delete end;
+        end = begin = NULL;
+    }
+    else {
+        temp = obj->prev;
+        tempn = obj->next;
+        temp->next = tempn;
+        tempn->prev = temp;
+        data.obj = obj->obj;
+        delete obj;
+    }
+    return data.obj;
+}</pre>
 </details>
 </li>
         </ol>
@@ -165,7 +170,7 @@
 <footer>
     <a href="https://rs.school/js/"><img src="https://rs.school/images/rs_school_js.svg" alt="RS School" class="logo-rs"></a> 
     <a href="https://github.com/nekhaychik"><img src="https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1614892835~hmac=b7d446d1494c9c132e072af7af3e0492" class="icon-style" alt="Github"></a>
-    <p class="text"><br>CV Task, 2021</p>
+    <p class="text"><br><h5 class="h5-footer">CV Task, 2021</h5></p>
 </footer>
 </body>
 </html>
